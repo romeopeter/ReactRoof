@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 REACTROOF.md
+REACTROOF-SSR.md
 IMPLEMENTATION_STATUS.md
