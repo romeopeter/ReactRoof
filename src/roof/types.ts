@@ -1,4 +1,4 @@
-import  type { ReactNode, MetaHTMLAttributes, LinkHTMLAttributes } from 'react';
+import type { ReactNode, MetaHTMLAttributes, LinkHTMLAttributes } from 'react';
 
 export type MetaProps = MetaHTMLAttributes<HTMLMetaElement>;
 export type LinkProps = LinkHTMLAttributes<HTMLLinkElement>;
@@ -19,6 +19,6 @@ export interface RoofProviderProps {
     children: ReactNode;
 }
 
-export interface RoofProps {
+export interface HeadProps {
     children: ReactNode;
 }
