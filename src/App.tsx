@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { RoofProvider, Roof } from './roof';
+import { RoofProvider, Head } from './roof';
 import './App.css';
 
 function PageA() {
   return (
     <>
-      <Roof>
+      <Head>
         <title>Page A - ReactRoof</title>
         <meta name="description" content="This is Page A description" />
         <link rel="canonical" href="https://example.com/a" />
-      </Roof>
+      </Head>
       <h2>Page A</h2>
       <p>Check the document title and head!</p>
     </>
@@ -19,12 +19,12 @@ function PageA() {
 function PageB() {
   return (
     <>
-      <Roof>
+      <Head>
         <title>Page B - ReactRoof</title>
         <meta name="description" content="This is Page B description" />
         <link rel="canonical" href="https://example.com/b" />
         <meta name="theme-color" content="#ff0000" />
-      </Roof>
+      </Head>
       <h2>Page B</h2>
       <p>Now the title and metadata have changed.</p>
     </>
@@ -37,10 +37,10 @@ function App() {
   return (
     <RoofProvider>
       <div className="start-screen">
-        <Roof>
+        <Head>
           <title>ReactRoof Demo</title>
           <meta name="application-name" content="ReactRoof App" />
-        </Roof>
+        </Head>
 
         <h1>ReactRoof Demo</h1>
         <div className="card">
