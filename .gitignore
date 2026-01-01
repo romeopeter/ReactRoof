@@ -25,3 +25,13 @@ dist-ssr
 REACTROOF.md
 REACTROOF-SSR.md
 IMPLEMENTATION_STATUS.md
+
+# Demo files removed from main
+src/App.tsx
+src/App.css
+src/main.tsx
+src/index.css
+src/assets
+index.html
+public/vite.svg
+public
