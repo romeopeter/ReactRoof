@@ -1,8 +1,9 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, afterEach } from 'vitest';
 import { render, cleanup } from '@testing-library/react';
 import { RoofProvider } from './RoofContext';
-import { Roof } from './Roof';
-import React from 'react';
+import { Head } from './Head';
+
+/* ------------------------------------------------------------------ */
 
 // Setup JSDOM is handled by Vitest config or via command line flags if set, 
 // but usually we need to specify environment in the file or config.
@@ -20,9 +21,9 @@ describe('Roof Integration', () => {
     it('should update document title', () => {
         render(
             <RoofProvider>
-                <Roof>
+                <Head>
                     <title>New Title</title>
-                </Roof>
+                </Head>
             </RoofProvider>
         );
         expect(document.title).toBe('New Title');
@@ -31,9 +32,9 @@ describe('Roof Integration', () => {
     it('should update meta tags', () => {
         render(
             <RoofProvider>
-                <Roof>
+                <Head>
                     <meta name="description" content="test desc" />
-                </Roof>
+                </Head>
             </RoofProvider>
         );
         const meta = document.querySelector('meta[name="description"]');
@@ -45,15 +46,15 @@ describe('Roof Integration', () => {
     it('should allow nested Roof overrides (Last one wins)', () => {
         render(
             <RoofProvider>
-                <Roof>
+                <Head>
                     <title>Base Title</title>
                     <meta name="theme-color" content="blue" />
-                </Roof>
+                </Head>
                 <div>
-                    <Roof>
+                    <Head>
                         <title>Nested Title</title>
                         <meta name="theme-color" content="red" />
-                    </Roof>
+                    </Head>
                 </div>
             </RoofProvider>
         );
@@ -68,9 +69,9 @@ describe('Roof Integration', () => {
     it('should clean up tags on unmount', () => {
         const { unmount } = render(
             <RoofProvider>
-                <Roof>
+                <Head>
                     <meta name="temp" content="foo" />
-                </Roof>
+                </Head>
             </RoofProvider>
         );
 
@@ -94,13 +95,13 @@ describe('Roof Integration', () => {
     it('should revert to previous tags when a child unmounts', () => {
         const TestComponent = ({ showChild }: { showChild: boolean }) => (
             <RoofProvider>
-                <Roof>
+                <Head>
                     <title>Parent Title</title>
-                </Roof>
+                </Head>
                 {showChild && (
-                    <Roof>
+                    <Head>
                         <title>Child Title</title>
-                    </Roof>
+                    </Head>
                 )}
             </RoofProvider>
         );
