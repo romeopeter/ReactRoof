@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import type { RoofContextValue, RoofProviderProps, Tags, MetaProps, LinkProps } from './types';
 
 const RoofContext = createContext<RoofContextValue | null>(null);
