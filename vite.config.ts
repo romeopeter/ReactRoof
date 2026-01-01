@@ -8,7 +8,9 @@ export default defineConfig({
     react(),
     dts({
       include: ['src/roof'],
+      exclude: ['**/*.test.ts', '**/*.test.tsx'],
       insertTypesEntry: true,
+      tsconfigPath: './tsconfig.app.json',
     }),
   ],
   build: {
