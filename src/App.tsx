@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import { RoofProvider, Head } from './roof';
+import { RoofProvider, Head, SEO } from './roof';
 import './App.css';
+
+/* -------------------------------------------------------- */
 
 function PageA() {
   return (
     <>
-      <Head>
-        <title>Page A - ReactRoof</title>
-        <meta name="description" content="This is Page A description" />
-        <link rel="canonical" href="https://example.com/a" />
-      </Head>
+      <SEO title='Page A - ReactRoof' description='This is Page A description' url='"https://example.com/a' />
       <h2>Page A</h2>
       <p>Check the document title and head!</p>
     </>
@@ -38,7 +36,7 @@ function App() {
     <RoofProvider>
       <div className="start-screen">
         <Head>
-          <title>ReactRoof Demo</title>
+          <title>ReactRoof</title>
           <meta name="application-name" content="ReactRoof App" />
         </Head>
 
