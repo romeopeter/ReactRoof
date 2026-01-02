@@ -12,7 +12,8 @@ describe('parseRoofChildren', () => {
         expect(result).toEqual({
             title: null,
             meta: [],
-            link: []
+            link: [],
+            script: []
         });
     });
 
