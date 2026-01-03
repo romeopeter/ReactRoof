@@ -37,25 +37,26 @@ function App() {
       <div className="start-screen">
         <Head>
           <title>ReactRoof</title>
-          <meta name="application-name" content="ReactRoof App" />
+          <meta name="application-name" content="ReactRoof library" />
         </Head>
 
-        <h1>ReactRoof Demo</h1>
+        <h1>ReactRoof</h1>
         <div className="card">
-          <button onClick={() => setPage('A')} disabled={page === 'A'}>
+          <button type='button' title='Page A' onClick={() => setPage('A')} disabled={page === 'A'}>
             Go to Page A
           </button>
-          <button onClick={() => setPage('B')} styles={{ marginLeft: '10px' }} disabled={page === 'B'}>
+
+          <button type='button' title='Page B' onClick={() => setPage('B')} style={{ marginLeft: '10px' }} disabled={page === 'B'}>
             Go to Page B
           </button>
         </div>
 
-        <div style={{ marginTop: '20px', border: '1px solid #ccc', padding: '20px' }}>
+        <div style={{ marginTop: '20px', border: '1px solid #ccc', padding: '20px', borderRadius: "8px" }}>
           {page === 'A' ? <PageA /> : <PageB />}
         </div>
 
         <p className="read-the-docs">
-          Inspect the &lt;head&gt; of this page to see changes.
+          You can inspect this page to see the changes in the &lt;head&gt; tag, or <a href="https://github.com/romeopeter/ReactRoof" target="_blank">read the docs</a>.
         </p>
       </div>
     </RoofProvider>
