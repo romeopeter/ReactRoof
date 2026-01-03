@@ -7,7 +7,7 @@ import dts from 'vite-plugin-dts'
 export default defineConfig(({ mode }) => {
   if (mode === 'demo') {
     return {
-      base: '/react-roof/',
+      base: './',
       plugins: [react()],
       build: {
         outDir: 'dist-demo',
