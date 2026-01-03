@@ -7,7 +7,7 @@ import './App.css';
 function PageA() {
   return (
     <>
-      <SEO title='Page A - ReactRoof' description='This is Page A description' url='"https://example.com/a' />
+      <SEO title='Page A - ReactRoof' description='This is Page A description' url='https://example.com/a' />
       <h2>Page A</h2>
       <p>Check the document title and head!</p>
     </>
