@@ -1,20 +1,20 @@
 {
   "name": "react-roof",
-  "version": "0.1.0",
-  "description": "A client-side library for managing HTML head tags in React applications.",
+  "version": "0.0.1",
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/react-roof.umd.cjs",
   "module": "./dist/react-roof.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/react-roof.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/react-roof.d.ts",
       "import": "./dist/react-roof.js",
       "require": "./dist/react-roof.umd.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -44,7 +44,7 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4",
-    "vite-plugin-dts": "^4.5.0",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.16"
   }
 }
