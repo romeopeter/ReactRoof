@@ -13,7 +13,7 @@ Efficient React HTML head manager for SEO and social media sharing. Use `ReactRo
 
 ## Installation
 
-_Before installing, please note that library isn't compatible with React v19 yet as use the stable version of 18.3_
+_Before installing, please note that the library isn't compatible with React v19 yet as it uses the stable version of 18.3_
 
 ```bash
 npm install react-roof
