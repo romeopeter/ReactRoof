@@ -130,7 +130,17 @@ The core component that allows React 19 to hoist its children to the document he
 
 ## Principles (React 19 Native)
 
-1.  **Native Hoisting**: React 19 natively recognizes `<title>`, `<meta>`, and `<link>` tags and automatically hoists them to the `<head>` of the document regardless of where they are rendered in the tree.
+1.  **Native Hoisting**: React 19 natively recognizes `<title>`, `<meta>`, and `<link>` tags and automatically hoists them to the `<head>`. Because React appends tags in the order they are rendered (parents then children), the browser naturally respects the child's tag as the "winner."
+
+    ```html
+    <!-- Resulting DOM structure in React 19 -->
+    <head>
+      <title>Parent Title</title>
+      <title>Child Title</title>
+      <!-- Browser uses the last one encountered -->
+    </head>
+    ```
+
 2.  **Resource Lifecycle**: Tags are managed by React's internal resource manager. When a component unmounts, React correctly handles the removing or updating of the associated head tags.
 3.  **No Boilerplate**: `ReactRoof` provides the high-level abstractions (`<SEO />`, `<Head />`) you need while letting React handle the low-level DOM work.
 
