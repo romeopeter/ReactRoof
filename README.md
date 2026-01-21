@@ -21,7 +21,7 @@ yarn add react-roof
 pnpm add react-roof
 ```
 
-> **Note**: `ReactRoof` v0.0.1+ requires React v19.0.0 or higher.
+> **Note**: `ReactRoof` v1.1.0+ requires React v19.0.0 or higher.
 
 ## Basic Usage
 
