@@ -1,4 +1,5 @@
- import type { SEOProps, ImageSEO, ImageSEOObject } from './types';
+import React from 'react';
+import type { SEOProps, ImageSEO, ImageSEOObject } from './types';
 import { Head } from './Head';
 
 export function SEO({
@@ -136,5 +137,3 @@ export function SEO({
         </Head>
     );
 }
-
-import React from 'react';

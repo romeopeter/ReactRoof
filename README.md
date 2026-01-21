@@ -23,9 +23,11 @@ yarn add react-roof
 pnpm add react-roof
 ```
 
+> **Note**: `ReactRoof` v1.1.0+ requires React v19.0.0 or higher.
+
 ## Basic Usage
 
-Wrap your application in `RoofProvider`, then use the `<Head>` component anywhere in your component tree.
+Wrap your application in `RoofProvider` (for backward compatibility), then use the `<Head>` component anywhere in your component tree.
 
 ```tsx
 import { RoofProvider, Head } from "react-roof";
@@ -113,11 +115,11 @@ function BlogPost() {
 
 ### `<Head>`
 
-The core component that portals its children to `document.head`.
+The core component that allows React 19 to hoist its children to the document head.
 
 - Supports standard HTML tags: `<title>`, `<meta>`, `<link>`, `<script>`.
-- Duplicate tags are handled automatically (last rendered wins for unique keys).
-- Updates are applied synchronously on render/mount.
+- React 19 handles tag hoisting and lifecycle automatically.
+- No more manual DOM manipulation or data-attributes!
 
 ```tsx
 <Head>
@@ -128,11 +130,21 @@ The core component that portals its children to `document.head`.
 </Head>
 ```
 
-## Principles
+## Principles (React 19 Native)
 
-1.  **Deduplication**: Tags like `<title>` or `<meta name="description">` are unique. If multiple components render them, the one deepest in the React tree (or rendered last) wins.
-2.  **Aggregation**: Tags like `article:tag` or `og:image` can appear multiple times. `ReactRoof` aggregates them properly.
-3.  **Cleanup**: When a component unmounts, its tags are removed, and the `<head>` reverts to the state defined by the remaining parent components.
+1.  **Native Hoisting**: React 19 natively recognizes `<title>`, `<meta>`, and `<link>` tags and automatically hoists them to the `<head>`. Because React appends tags in the order they are rendered (parents then children), the browser naturally respects the child's tag as the "winner."
+
+    ```html
+    <!-- Resulting DOM structure in React 19 -->
+    <head>
+      <title>Parent Title</title>
+      <title>Child Title</title>
+      <!-- Browser uses the last one encountered -->
+    </head>
+    ```
+
+2.  **Resource Lifecycle**: Tags are managed by React's internal resource manager. When a component unmounts, React correctly handles the removing or updating of the associated head tags.
+3.  **No Boilerplate**: `ReactRoof` provides the high-level abstractions (`<SEO />`, `<Head />`) you need while letting React handle the low-level DOM work.
 
 ## License
 
